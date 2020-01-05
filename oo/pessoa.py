@@ -1,7 +1,8 @@
 class Pessoa:
-    def __init__(self, nome, idade=35):
+    def __init__(self, *filhos, nome, idade=35):
         self.idade = idade
         self.nome = nome
+        self.filhos = list(filhos)
 
 
     def cumprimenrar(self): #isso é um método. Método não passa de uma função no corpo de uma classe
