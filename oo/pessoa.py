@@ -20,6 +20,17 @@ if __name__=='__main__':
     for filho in Pai.filhos:
         print(filho.nome)
 
+    #criação de um atributo dinâmico, que não consta do __init__
+
+    Edmar.sobrenome = 'cavalcante'
+    print(Edmar.sobrenome)
+    del Edmar.sobrenome
+    # criei e depois removi um atributo dinâmico sobrenome para Edmar
+
+    # atributo especial que permite conferir todos os atributos de instância
+    # __dict__
+    print(Edmar.__dict__)
+    print(Pai.__dict__)
 
 
 
