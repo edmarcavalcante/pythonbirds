@@ -1,4 +1,8 @@
 class Pessoa:
+    olhos = 2 #aqui foi criado um atributo de classe. Trata-se de uma técnica para economizar espaço na memória.
+    #como é um valor default para todas as pessoa, não é necessário criar dentro do método __init__.
+
+
     def __init__(self, nome, idade=35, *filhos):
         self.idade = idade
         self.nome = nome
@@ -32,5 +36,12 @@ if __name__=='__main__':
     print(Edmar.__dict__)
     print(Pai.__dict__)
 
+    #Nesse tópico você vai ver como economizar memória
+    # com os atributos de dados, também chamados de atributos padrão (default) em Python.
 
+    print(Pessoa.olhos) #acesso o atributo olhos diretamente da classe. Isso só é possível porque o atributo olhos é de
+    # classe.
+    print(Edmar.olhos) # acesso o atributo olhos também através do objeto.
 
+# relembrado - foram vistos 3 tipos de atributos 1- de instância (método __init__, 2- atributo dinâmico e
+# 3- atributo de classe
