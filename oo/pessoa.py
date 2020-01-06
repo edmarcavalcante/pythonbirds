@@ -1,5 +1,5 @@
 class Pessoa:
-    def __init__(self, *filhos, nome, idade=35):
+    def __init__(self, nome, idade=35, *filhos):
         self.idade = idade
         self.nome = nome
         self.filhos = list(filhos)
@@ -9,12 +9,17 @@ class Pessoa:
         return 'Olá'
 
 if __name__=='__main__':
-    p = Pessoa('Edmar',20)
+    Edmar = Pessoa('Edmar',20)
+    Pai = Pessoa('Evaldo', 55,Edmar)
 
-    print(Pessoa.cumprimenrar(p))
-    print(p.cumprimenrar()) # essa é a forma correta de chamar um objeto junto com um método
-    print(p.nome)
-    print(p.idade)
+    print(Pessoa.cumprimenrar(Edmar))
+    print(Edmar.cumprimenrar()) # essa é a forma correta de chamar um objeto junto com um método
+    print(Edmar.nome)
+    print(Edmar.idade)
+    print(Pai.filhos)
+    for filho in Pai.filhos:
+        print(filho.nome)
+
 
 
 
