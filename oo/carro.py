@@ -96,7 +96,8 @@ os seguintes atributos:
     'Norte'
     >>> carro.girar_a_esquerda()
     >>> carro.calcular_direcao()
-    'Oeste' '''
+    'Oeste'
+    '''
 
 class Motor:
     def __init__(self):
@@ -135,6 +136,35 @@ class Direcao:
     def girar_a_esquerda(self):
         self.valor = self.rotacao_a_esquerda_dct[self.valor]
 
+class Carro:
+    # esse classe carro utilzou como argumentos outras duas classes
+    # criadas anteriormente. Isso se chama composição
+    def __init__(self, direcao, motor):
+        self.motor = motor
+        self.direcao = direcao
 
+    def calcular_velocidade (self):# a classe carro delega à classe motor a função de calcular a velocidade, pois
+        # lá já há uma função com esse propósito
+        return self.motor.velocidade
+
+    def acelerar(self): # mais uma delegação à classe motor
+        self.motor.acelerar()
+
+    def frear(self):
+        self.motor.frear()
+
+    def calcular_direcao(self):
+        return self.direcao.valor
+
+    def girar_a_direita(self):
+        self.direcao.girar_a_direita()
+
+    def girar_a_esquerda(self):
+        self.direcao.girar_a_esquerda()
+
+    def calcular_direcao(self):
+        return self.direcao.valor
+
+    
 
 
